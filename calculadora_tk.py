@@ -3,14 +3,8 @@ from tkinter import Button, Entry, Label, Tk
 ventana = Tk()
 ventana.title("Calculadora IMC")
 ventana.geometry("400x600")
-ventana.resizable(False, False)
+ventana.resizable(True, True)
 ventana.configure(bg="grey")
-
-etiqueta_nombre = Label(ventana, text='Ingrese su nombre', fg='black', bg='grey')
-etiqueta_nombre.pack(pady='10')
-
-nombre = Entry(ventana, width='40')
-nombre.pack(pady='5')
 
 etiqueta_edad = Label(ventana, text='Ingrese su edad', fg='black', bg='grey')
 etiqueta_edad.pack(pady='10')
@@ -34,16 +28,16 @@ peso.pack(pady='5')
 def calcular_imc():
     estatura_valor = estatura.get()
     peso_valor = peso.get()
-    _imc = estatura_valor/peso_valor
-    resultado.config(text=f'Hola {nombre}, tu calculo de IMC es {_imc}')
+    _imc = int(estatura_valor) / int(peso_valor)
+    resultado.config(text=f'Hola, tu calculo de IMC es {_imc}')
 
-    btn_iniciar = Button(ventana, text='Calcular', command=calcular_imc)
-    btn_iniciar.pack(pady='30')
+btn_iniciar = Button(ventana, text='Calcular', command=calcular_imc)
+btn_iniciar.pack(pady='30')
 
 
 
-    resultado = Label(ventana, text='', font=('Arial', 20, 'bold'))
-    resultado.pack(pady='30')
+resultado = Label(ventana, text='', font=('Arial', 15, 'bold'))
+resultado.pack(pady='30')
 
 
 
