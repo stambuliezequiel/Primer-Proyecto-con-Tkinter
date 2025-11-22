@@ -28,9 +28,7 @@ def iniciar():
         peso_kg = float(peso_valor)
         altura_m = float(altura_valor) / 100
         imc = peso_kg / (altura_m ** 2)
-        if peso <= 0 or altura <= 0:
-            messagebox.showerror("Error", "El peso y la estatura deben ser números positivos.")
-            return
+       
     except ValueError:
         messagebox.showerror("Por favor, ingresa solo números válidos en los campos.")  
     resultado.config(text=f"Tu peso es {peso_valor} kilos y tu altura es {altura_valor} cm y tu IMC es {imc}", fg= 'red', bg= 'white')
